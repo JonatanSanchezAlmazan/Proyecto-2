@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ig--bgColor: #272727;
+    --ig--bgColorBtn: #FF511B;
+    --ig--bgColorLetter: #fff;
+    --ig--bgColorH3: #929292;
+    --ig--bgColorBorder: #3D3D3D;
+    /* SPACING */
+    --ig-margin-xs: 10px;
+    --ig-margin-s: 20px;
+    --ig-margin-m: 30px;
+    --ig-margin-l: 40px;
+    --ig-margin-xl: 50px;
+    --ig-margin-xxl: 60px;
+    --ig-padding-xs: 10px;
+    --ig-padding-s: 20px;
+    --ig-padding-m: 30px;
+    --ig-padding-l: 40px;
+    --ig-padding-xl: 50px;
+    --ig-padding-xxl: 60px;
+    --ig-gap-xs: 10px;
+    --ig-gap-s: 20px;
+    --ig-gap-m: 30px;
+    --ig-gap-l: 40px;
+    --ig-gap-xl: 50px;
+    --ig-gap-xxl: 60px;
+}
+
+body {
+    background-color: var(--ig--bgColor);
+}
+
+#app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
