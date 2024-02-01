@@ -21,6 +21,7 @@ header {
         background-size: cover;
         background-position: center;
         align-items: flex-start;
+        height: 50svh;
     }
 }
 
@@ -74,121 +75,5 @@ header {
 @media (min-width: 1280px) {
     .logo>img {
         width: 70%;
-    }
-}
-
-
-/* Input filter */
-
-.filter {
-    max-width: 250px;
-    border-radius: 10px;
-    border: none;
-    height: 30px;
-    background: rgb(2, 0, 36);
-    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgb(247, 64, 8) 0%, rgb(255, 118, 76) 100%);
-    color: var(--ig--bgColorBorder);
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.filter::placeholder {
-    color: var(--ig--bgColorLetter);
-    font-weight: 400;
-}
-
-
-/* Section options */
-
-.section-options {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-
-/* Select element */
-
-.select-element {
-    width: 250px;
-    border: none;
-    background: rgb(2, 0, 36);
-    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgb(247, 64, 8) 0%, rgb(255, 118, 76) 100%);
-    text-align: center;
-    font-size: 20px;
-    color: var(--ig--bgColorLetter);
-    border-radius: 10px;
-}
-
-.select-element:focus {
-    outline: none;
-}
-
-option {
-    color: var(--ig--bgColorLetter);
-    background-color: rgb(255, 118, 76);
-}
-
-
-/* Section filter price */
-
-.filter-price {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--ig-gap-s) 0;
-}
-
-.filter-price>label {
-    color: var(--ig--bgColorLetter);
-    font-size: 20px;
-}
-
-.filter-price>input {
-    background-color: rgb(255, 118, 76);
-    border: none;
-    width: 40px;
-    margin: 0 var(--ig-margin-s);
-    font-size: 20px;
-    text-align: center;
-    color: var(--ig--bgColorLetter);
-    border-radius: 10px;
-}
-
-
-/* Section clear filter */
-
-.clean-filter {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.section-filter {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--ig-gap-s);
-    margin: auto;
-    padding: var(--ig-padding-s);
-    border-radius: 20px;
-    background-color: #323232;
-}
-
-@media (min-width: 768px) {
-    .section-filter {
-        gap: var(--ig-gap-xl);
-    }
-}
-
-@media (min-width: 1600px) {
-    .section-filter {
-        width: 60%;
     }
 }

@@ -1,0 +1,24 @@
+.aside-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--ig-gap-s);
+    margin: auto;
+    padding: var(--ig-padding-s);
+    border-radius: 20px;
+    background-color: var(--ig--bgColorAside);
+}
+
+@media (min-width: 768px) {
+    .aside-filter {
+        gap: var(--ig-gap-xl);
+    }
+}
+
+@media (min-width: 1600px) {
+    .aside-filter {
+        width: 90%;
+    }
+}

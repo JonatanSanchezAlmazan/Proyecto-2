@@ -5,11 +5,17 @@
 }
 
 :root {
+    /* COLORS */
     --ig--bgColor: #272727;
     --ig--bgColorBtn: #FF511B;
     --ig--bgColorLetter: #fff;
     --ig--bgColorH3: #929292;
-    --ig--bgColorBorder: #3D3D3D;
+    --ig--bgColorBorder: #495057;
+    --ig--bgColorGradient0: rgba(2, 0, 36, 1);
+    --ig--bgColorGradient1: #FF511B;
+    --ig--bgColorGradient2: rgb(255, 118, 76);
+    --ig--bgColorAside: #323232;
+    --ig--bgColorStar: rgb(241, 241, 66);
     /* SPACING */
     --ig-margin-xs: 10px;
     --ig-margin-s: 20px;
@@ -41,6 +47,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: var(--ig-margin-xxl);
 }
 
 input:focus {

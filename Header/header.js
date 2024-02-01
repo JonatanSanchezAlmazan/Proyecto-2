@@ -1,5 +1,5 @@
-import { btnClean, btnClose, btnSearchGame } from "../Buttons/buttons";
-import { filterName, filterPrice, filterSelect } from "../Filter/filter";
+import { btnSearchGame } from "../Buttons/buttons";
+import { filterPrice, filterSelect } from "../Filter/filter";
 
 const createHeader = () => {
     const divApp = document.querySelector("#app");
@@ -30,32 +30,10 @@ const createLogo = () => {
     sectionHeader.appendChild(sectionlogo);
 }
 
-const createSectionfilter = () => {
-    const main = document.querySelector("main");
-    const sectionFilter = document.createElement("section");
-    sectionFilter.classList.add("section-filter");
-    const inputFilterName = document.createElement("input");
-    inputFilterName.id = "filter";
-    inputFilterName.type = "text";
-    inputFilterName.placeholder = "Busca tu videojuego"
-    inputFilterName.classList.add("filter");
-    sectionFilter.appendChild(inputFilterName);
-    main.appendChild(sectionFilter);
-    filterName();
-    sectionOptions();
-    sectionFilterPrice();
-    sectionClearFilter();
-    btnClean();
-    btnClose();
-}
-
-const renderSectionFilter = () => {
-    createSectionfilter();
-}
 
 
 const sectionOptions = () => {
-    const sectionFilter = document.querySelector(".section-filter");
+    const asideFilter = document.querySelector(".aside-filter");
     const sectionOptions = document.createElement("section");
     const selectElement = document.createElement("select");
     const options = ["AllGames", "Steam", "Battle", "Rockstart"];
@@ -70,12 +48,12 @@ const sectionOptions = () => {
     sectionOptions.classList.add("section-options");
     selectElement.classList.add("select-element");
     sectionOptions.appendChild(selectElement);
-    sectionFilter.appendChild(sectionOptions);
+    asideFilter.appendChild(sectionOptions);
     filterSelect();
 }
 
 const sectionFilterPrice = () => {
-    const sectionFilter = document.querySelector(".section-filter");
+    const asideFilter = document.querySelector(".aside-filter");
     const sectionFilterPrice = document.createElement("section");
     const firstLabel = document.createElement("label");
     const firstInput = document.createElement("input");
@@ -92,16 +70,16 @@ const sectionFilterPrice = () => {
     sectionFilterPrice.appendChild(firstInput);
     sectionFilterPrice.appendChild(secondLabel);
     sectionFilterPrice.appendChild(secondInput);
-    sectionFilter.appendChild(sectionFilterPrice);
+    asideFilter.appendChild(sectionFilterPrice);
     btnSearchGame();
     filterPrice();
 
 }
 const sectionClearFilter = () => {
-    const sectionFilter = document.querySelector(".section-filter");
+    const asideFilter = document.querySelector(".aside-filter");
     const sectionClearFilter = document.createElement("section");
     sectionClearFilter.classList.add("clean-filter");
-    sectionFilter.appendChild(sectionClearFilter);
+    asideFilter.appendChild(sectionClearFilter);
 
 
 }
@@ -110,5 +88,6 @@ const renderHeader = () => {
     createHeader();
     createLogo();
     sectionInfoHeader();
+
 }
-export { renderHeader, createLogo, sectionOptions, sectionFilterPrice, sectionClearFilter, createHeader, renderSectionFilter };
+export { renderHeader, createLogo, sectionOptions, sectionFilterPrice, sectionClearFilter, createHeader };

@@ -1,6 +1,9 @@
+import renderAsideFilter from "../Aside/aside";
 import { cleanFilters } from "../Filter/filter";
-import { renderListGame, games } from "../Games/games";
-import { renderSectionFilter, } from "../Header/header";
+import { renderListGame, games, renderUL } from "../Games/games";
+import { renderHeader } from "../Header/header";
+import renderForm from "../Login/login";
+
 
 
 const btnSearchFunction = () => {
@@ -12,9 +15,7 @@ const btnSearchFunction = () => {
     sectionBtnSearch.appendChild(btnSearch);
     sectionHeader.appendChild(sectionBtnSearch);
     btnSearch.addEventListener("click", () => {
-        renderSectionFilter();
-        renderListGame(games);
-
+        renderAsideFilter();
     });
 
 }
@@ -27,19 +28,23 @@ const btnLogin = () => {
     btnLogin.classList.add("btn-login");
     sectionLogin.appendChild(btnLogin);
     sectionHeader.appendChild(sectionLogin);
-    btnLogin.addEventListener("click", () => console.log("Hola"))
+    btnLogin.addEventListener("click", () => {
+        renderForm();
+
+
+    })
 }
 
 const btnClose = () => {
-    const sectionFilter = document.querySelector(".section-filter");
+    const asideFilter = document.querySelector(".aside-filter");
     const btnClose = document.createElement("button");
     btnClose.textContent = "X";
     btnClose.classList.add("btn-close");
     btnClose.addEventListener("click", () => {
-        sectionFilter.remove();
+        asideFilter.remove();
     })
 
-    sectionFilter.appendChild(btnClose);
+    asideFilter.appendChild(btnClose);
 
 }
 
@@ -47,7 +52,7 @@ const btnSearchGame = () => {
     const sectionFilterPrice = document.querySelector(".filter-price");
     const btnPrice = document.createElement("button");
     btnPrice.classList.add("btn");
-    btnPrice.textContent = "Search Game";
+    btnPrice.textContent = "Buscar";
     sectionFilterPrice.appendChild(btnPrice);
 
 }
@@ -55,7 +60,7 @@ const btnSearchGame = () => {
 const btnClean = () => {
     const sectionClear = document.querySelector(".clean-filter");
     const btnClean = document.createElement("button");
-    btnClean.textContent = "Clear Filters";
+    btnClean.textContent = "Limpiar Filtros";
     btnClean.classList.add("btn");
     sectionClear.appendChild(btnClean);
     btnClean.addEventListener("click", () => {
@@ -67,16 +72,41 @@ const btnClean = () => {
 const btnBack = () => {
     const divInfo = document.querySelector(".div-info");
     const btnBackPage = document.createElement("button");
+    btnBackPage.id = "btnBack";
     btnBackPage.classList.add("btn");
     btnBackPage.textContent = "Back";
+    divInfo.appendChild(btnBackPage);
     btnBackPage.addEventListener("click", () => {
-        location.reload();
+        divInfo.remove();
+        renderHeader();
+        btnSearchFunction();
+        btnLogin();
+        renderUL();
+        renderListGame(games);
 
 
     })
-    divInfo.appendChild(btnBackPage);
+}
+
+const btnBackLogin = () => {
+    const form = document.querySelector(".form");
+    const btnBackPage = document.createElement("button");
+    btnBackPage.classList.add("btn");
+    btnBackPage.textContent = "Salir del formulario";
+    form.appendChild(btnBackPage);
+    btnBackPage.addEventListener("click", () => {
+        form.remove();
+        renderHeader();
+        btnSearchFunction();
+        btnLogin();
+        renderUL();
+        renderListGame(games);
+    })
+
 }
 
 
 
-export { btnSearchFunction, btnLogin, btnClose, btnSearchGame, btnClean, btnBack };
+
+
+export { btnSearchFunction, btnLogin, btnClose, btnSearchGame, btnClean, btnBack, btnBackLogin };
