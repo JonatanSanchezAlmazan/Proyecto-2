@@ -27,7 +27,7 @@ const filterSelect = () => {
 const filterName = () => {
     const inputFilter = document.querySelector("#filter");
     inputFilter.addEventListener("input", (event) => {
-        const value = event.target.value;
+        const value = event.target.value.toLowerCase();
         if (value === "") {
             renderListGame(games);
         } else {

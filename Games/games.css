@@ -17,6 +17,11 @@ main {
     padding: var(--ig-padding-xs);
 }
 
+ul>p {
+    font-size: 20px;
+    color: var(--ig--bgColorH3);
+}
+
 ul>li {
     display: flex;
     flex-direction: column;
