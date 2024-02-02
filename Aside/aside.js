@@ -18,7 +18,6 @@ const createAsideFilter = () => {
     sectionOptions();
     sectionFilterPrice();
     sectionClearFilter();
-    btnClean();
     btnClose();
 }
 

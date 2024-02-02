@@ -1,5 +1,5 @@
 import renderAsideFilter from "../Aside/aside";
-import { cleanFilters } from "../Filter/filter";
+import { cleanFilters, filterPrice } from "../Filter/filter";
 import { renderListGame, games, renderUL } from "../Games/games";
 import { renderHeader } from "../Header/header";
 import renderForm from "../Login/login";
@@ -14,9 +14,7 @@ const btnSearchFunction = () => {
     btnSearch.classList.add("btn-search");
     sectionBtnSearch.appendChild(btnSearch);
     sectionHeader.appendChild(sectionBtnSearch);
-    btnSearch.addEventListener("click", () => {
-        renderAsideFilter();
-    });
+    btnSearch.addEventListener("click", renderAsideFilter);
 
 }
 
@@ -28,11 +26,7 @@ const btnLogin = () => {
     btnLogin.classList.add("btn-login");
     sectionLogin.appendChild(btnLogin);
     sectionHeader.appendChild(sectionLogin);
-    btnLogin.addEventListener("click", () => {
-        renderForm();
-
-
-    })
+    btnLogin.addEventListener("click", renderForm)
 }
 
 const btnClose = () => {
@@ -54,7 +48,7 @@ const btnSearchGame = () => {
     btnPrice.classList.add("btn");
     btnPrice.textContent = "Buscar";
     sectionFilterPrice.appendChild(btnPrice);
-
+    btnPrice.addEventListener("click", filterPrice);
 }
 
 const btnClean = () => {

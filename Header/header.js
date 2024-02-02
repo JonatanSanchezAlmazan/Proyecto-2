@@ -1,5 +1,6 @@
-import { btnSearchGame } from "../Buttons/buttons";
-import { filterPrice, filterSelect } from "../Filter/filter";
+import { btnClean, btnSearchGame } from "../Buttons/buttons";
+import { filterSelect } from "../Filter/filter";
+
 
 const createHeader = () => {
     const divApp = document.querySelector("#app");
@@ -30,13 +31,11 @@ const createLogo = () => {
     sectionHeader.appendChild(sectionlogo);
 }
 
-
-
 const sectionOptions = () => {
     const asideFilter = document.querySelector(".aside-filter");
     const sectionOptions = document.createElement("section");
     const selectElement = document.createElement("select");
-    const options = ["AllGames", "Steam", "Battle", "Rockstart"];
+    const options = ["AllGames", "Steam", "Battle", "Rockstar"];
     options.forEach((option) => {
         let optionElement = document.createElement("option");
         optionElement.textContent = option;
@@ -72,16 +71,14 @@ const sectionFilterPrice = () => {
     sectionFilterPrice.appendChild(secondInput);
     asideFilter.appendChild(sectionFilterPrice);
     btnSearchGame();
-    filterPrice();
-
 }
+
 const sectionClearFilter = () => {
     const asideFilter = document.querySelector(".aside-filter");
     const sectionClearFilter = document.createElement("section");
     sectionClearFilter.classList.add("clean-filter");
     asideFilter.appendChild(sectionClearFilter);
-
-
+    btnClean();
 }
 
 const renderHeader = () => {
