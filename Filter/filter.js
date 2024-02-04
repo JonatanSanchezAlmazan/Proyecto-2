@@ -4,17 +4,11 @@ import { renderListGame, games } from "../Games/games";
 const changeOption = (option) => {
     if (option === "AllGames") {
         renderListGame(games);
-        console.log(games);
     } else {
         const filtered = games.filter((game) => game.seller === option);
         renderListGame(filtered);
     }
 }
-
-
-
-
-
 
 const filterSelect = () => {
     const elementSelect = document.querySelector("select");
@@ -27,21 +21,21 @@ const filterSelect = () => {
 const filterName = () => {
     const inputFilter = document.querySelector("#filter");
     inputFilter.addEventListener("input", (event) => {
+        const selectedOption = document.querySelector("select").value;
         const value = event.target.value.toLowerCase();
-        if (value === "") {
-            const filteredName = games.filter((game) => game.seller === selectedOption);
-            renderListGame(filteredName);
+        const filteredName = games.filter((game) => game.name.toLowerCase().includes(value));
+        const filteredByPlatform = selectedOption !== "AllGames" ? filteredName.filter((game) => game.seller === selectedOption) : filteredName;
+        if (filteredByPlatform.length === 0) {
+            const ul = document.querySelector("#list");
+            ul.innerHTML = `<p>No hay ningún videojuego que contenga la letra ${value}</p> `;
         } else {
-            const filteredName = games.filter((game) => game.seller === selectedOption && game.name.toLowerCase().includes(value));
-            if (filteredName.length === 0) {
-                const ul = document.querySelector("#list");
-                ul.innerHTML = `<p>No hay ningun videojuego que contenga la letra ${value}</p> `;
-            } else {
-                renderListGame(filteredName);
-            }
+            renderListGame(filteredByPlatform);
         }
-    })
+    });
 }
+
+
+
 
 
 
