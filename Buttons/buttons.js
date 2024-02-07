@@ -5,7 +5,7 @@ import { renderHeader } from "../Header/header";
 import renderForm from "../Login/login";
 
 
-// Función para crear el boton de buscar y cuando clicamos en el llama a la función renderAsideFilter.
+// Función para crear el boton de buscar y cuando clicamos en el llama a la función renderAsideFilter y deshabilita el boton de buscar..
 const btnSearchFunction = () => {
     const sectionHeader = document.querySelector(".section-header");
     const sectionBtnSearch = document.createElement("section");
@@ -14,8 +14,10 @@ const btnSearchFunction = () => {
     btnSearch.classList.add("btn-search");
     sectionBtnSearch.appendChild(btnSearch);
     sectionHeader.appendChild(sectionBtnSearch);
-    btnSearch.addEventListener("click", renderAsideFilter);
-
+    btnSearch.addEventListener("click", () => {
+        renderAsideFilter();
+        btnSearch.disabled = true;
+    });
 }
 
 // Función para crear el botton de Login y cuando clicamos llama a la función renderForm.
@@ -30,13 +32,17 @@ const btnLogin = () => {
     btnLogin.addEventListener("click", renderForm)
 }
 
-// Función para crear el boton de cerrar en la sección de aside, que cuando clicamos en el elimina esa sección
+// Función para crear el boton de cerrar en la sección de aside, que cuando clicamos en el elimina esa sección y vuelve ha habilitar el boton de buscar.
 const btnClose = () => {
     const asideFilter = document.querySelector(".aside-filter");
+    const btnSearch = document.querySelector(".btn-search");
     const btnClose = document.createElement("button");
     btnClose.textContent = "X";
     btnClose.classList.add("btn-close");
-    btnClose.addEventListener("click", () => asideFilter.remove());
+    btnClose.addEventListener("click", () => {
+        asideFilter.remove()
+        btnSearch.disabled = false;
+    });
 
     asideFilter.appendChild(btnClose);
 }
