@@ -1,7 +1,7 @@
 import { btnClean, btnSearchGame } from "../Buttons/buttons";
 import { filterSelect } from "../Filter/filter";
 
-
+// Función encargada de crear el header con una sección header.
 const createHeader = () => {
     const divApp = document.querySelector("#app");
     const header = document.createElement("header");
@@ -11,6 +11,7 @@ const createHeader = () => {
     divApp.appendChild(header);
 }
 
+// Función encargada de crear una sección para el titulo principal de la página
 const sectionInfoHeader = () => {
     const header = document.querySelector("header");
     const sectionInfoHeader = document.createElement("section");
@@ -21,6 +22,7 @@ const sectionInfoHeader = () => {
     header.appendChild(sectionInfoHeader);
 }
 
+// Función encragada de crear el logo de la página.
 const createLogo = () => {
     const sectionHeader = document.querySelector(".section-header");
     const sectionlogo = document.createElement("section");
@@ -31,6 +33,7 @@ const createLogo = () => {
     sectionHeader.appendChild(sectionlogo);
 }
 
+// Función encargada de recojer el aside y crear dentro la sección del select con una opcion por cada plataforma, esta función también llama a la función filterSelect.
 const sectionOptions = () => {
     const asideFilter = document.querySelector(".aside-filter");
     const sectionOptions = document.createElement("section");
@@ -51,6 +54,7 @@ const sectionOptions = () => {
     filterSelect();
 }
 
+// Función encargada de crear la sección de filtrado por precio, esta función llama a la función btnSearchGame para buscar los juegos entre los rangos de precio.
 const sectionFilterPrice = () => {
     const asideFilter = document.querySelector(".aside-filter");
     const sectionFilterPrice = document.createElement("section");
@@ -73,6 +77,7 @@ const sectionFilterPrice = () => {
     btnSearchGame();
 }
 
+// Función encragada crear la sección para introducir el boton de limpiar los filtros, esta llama a la función btnClean para limpiar el valor de los filtros.
 const sectionClearFilter = () => {
     const asideFilter = document.querySelector(".aside-filter");
     const sectionClearFilter = document.createElement("section");
@@ -81,6 +86,7 @@ const sectionClearFilter = () => {
     btnClean();
 }
 
+// Función encragada de renderizar todo el header.
 const renderHeader = () => {
     createHeader();
     createLogo();

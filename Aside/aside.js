@@ -1,7 +1,8 @@
-import { btnClean, btnClose } from "../Buttons/buttons";
+import { btnClose } from "../Buttons/buttons";
 import { filterName } from "../Filter/filter";
 import { sectionClearFilter, sectionFilterPrice, sectionOptions } from "../Header/header";
 
+// Funcion para crear el aside donde estan alojados los filtros, esta función llama a todas las secciones de los filtros y al boton cerrar.
 const createAsideFilter = () => {
     const divApp = document.querySelector("#app");
     const main = document.querySelector("main");
@@ -21,6 +22,7 @@ const createAsideFilter = () => {
     btnClose();
 }
 
+// Función encragada de renderizar el aside.
 const renderAsideFilter = () => {
     createAsideFilter();
 }

@@ -1,5 +1,8 @@
 /* GAMES */
 
+
+/* Style ul list */
+
 #list {
     list-style: none;
     display: flex;
@@ -10,11 +13,6 @@
     width: 100%;
     margin: auto;
     margin-top: var(--ig-margin-l);
-}
-
-main {
-    width: 90%;
-    padding: var(--ig-padding-xs);
 }
 
 ul>p {
@@ -45,6 +43,17 @@ ul>li>img:hover {
     transform: scale(1.1);
 }
 
+
+/* Style main */
+
+main {
+    width: 90%;
+    padding: var(--ig-padding-xs);
+}
+
+
+/* Style games */
+
 .game {
     display: flex;
     flex-direction: column;
@@ -72,6 +81,9 @@ section>h3 {
     color: var(--ig--bgColorLetter);
     font-size: 18px;
 }
+
+
+/* Style div info game */
 
 .div-info {
     width: 90%;
@@ -123,6 +135,9 @@ section>h3 {
         width: 50%;
     }
 }
+
+
+/* Style Star */
 
 .section-star {
     margin: auto;

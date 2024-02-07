@@ -5,7 +5,7 @@ import { renderHeader } from "../Header/header";
 import renderForm from "../Login/login";
 
 
-
+// Función para crear el boton de buscar y cuando clicamos en el llama a la función renderAsideFilter.
 const btnSearchFunction = () => {
     const sectionHeader = document.querySelector(".section-header");
     const sectionBtnSearch = document.createElement("section");
@@ -18,6 +18,7 @@ const btnSearchFunction = () => {
 
 }
 
+// Función para crear el botton de Login y cuando clicamos llama a la función renderForm.
 const btnLogin = () => {
     const sectionHeader = document.querySelector(".section-header");
     const sectionLogin = document.createElement("section");
@@ -29,19 +30,18 @@ const btnLogin = () => {
     btnLogin.addEventListener("click", renderForm)
 }
 
+// Función para crear el boton de cerrar en la sección de aside, que cuando clicamos en el elimina esa sección
 const btnClose = () => {
     const asideFilter = document.querySelector(".aside-filter");
     const btnClose = document.createElement("button");
     btnClose.textContent = "X";
     btnClose.classList.add("btn-close");
-    btnClose.addEventListener("click", () => {
-        asideFilter.remove();
-    })
+    btnClose.addEventListener("click", () => asideFilter.remove());
 
     asideFilter.appendChild(btnClose);
-
 }
 
+// Función para crear el boton para buscar videojuegos con un rango de precio, al clicar llama a la función filterPrice
 const btnSearchGame = () => {
     const sectionFilterPrice = document.querySelector(".filter-price");
     const btnPrice = document.createElement("button");
@@ -51,18 +51,19 @@ const btnSearchGame = () => {
     btnPrice.addEventListener("click", filterPrice);
 }
 
+// Función para crear el boton de limpiar todos los filtros, al clicar en el llama a la función cleanFilter y renderListGame para volver a mostrar todos los juegos.
 const btnClean = () => {
-    const sectionClear = document.querySelector(".clean-filter");
-    const btnClean = document.createElement("button");
-    btnClean.textContent = "Limpiar Filtros";
-    btnClean.classList.add("btn");
-    sectionClear.appendChild(btnClean);
-    btnClean.addEventListener("click", () => {
-        cleanFilters();
-        renderListGame(games);
-    })
-}
-
+        const sectionClear = document.querySelector(".clean-filter");
+        const btnClean = document.createElement("button");
+        btnClean.textContent = "Limpiar Filtros";
+        btnClean.classList.add("btn");
+        sectionClear.appendChild(btnClean);
+        btnClean.addEventListener("click", () => {
+            cleanFilters();
+            renderListGame(games);
+        })
+    }
+    // Funcion para crear el boton de volver atrás en la sección de la información de cada juego, al hacer click elimina la sección de la información del juego y vuelve a renderizar toda la página pricipal.
 const btnBack = () => {
     const divInfo = document.querySelector(".div-info");
     const btnBackPage = document.createElement("button");
@@ -82,6 +83,7 @@ const btnBack = () => {
     })
 }
 
+//Función para crear el boton de salir del formulario, cuando se hace click en el se elimina el formulario y vuelve a renderizar la página pricipal.
 const btnBackLogin = () => {
     const form = document.querySelector(".form");
     const btnBackPage = document.createElement("button");
@@ -96,11 +98,7 @@ const btnBackLogin = () => {
         renderUL();
         renderListGame(games);
     })
-
 }
-
-
-
 
 
 export { btnSearchFunction, btnLogin, btnClose, btnSearchGame, btnClean, btnBack, btnBackLogin };

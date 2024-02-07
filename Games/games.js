@@ -95,52 +95,52 @@ const games = [{
     }
 ]
 
-// CREATE GAME
+// Función encargada de crear un juego, el cual se compone de una sección donde dentro hay un li para cada juego con una imagen, un titulo, un precio, y 5 divs que muestran las estrellas, la función se encarga de retornar el li de juego, tambien la imagen tiene un escuchador de eventos que cuadno haces click en ella te lleva a la función renderInfoGame donde le llega por parámetro el juego seleccionado.
 const createGame = (game) => {
-        const liGame = document.createElement("li");
-        const imgGame = document.createElement("img");
-        const sectionInfo = document.createElement("section");
-        const titleGame = document.createElement("h2");
-        const priceGame = document.createElement("h3");
-        let sectionStars = document.createElement("section");
-        sectionStars.classList.add("section-star")
-        liGame.classList.add("game");
-        imgGame.src = `${game.cover}`;
-        imgGame.alt = `Videpjuego ${game.name}`;
-        titleGame.textContent = game.name;
-        priceGame.textContent = `${game.price}€`;
-        liGame.appendChild(imgGame);
-        liGame.appendChild(sectionInfo);
-        sectionInfo.appendChild(titleGame);
-        sectionInfo.appendChild(priceGame);
-        for (let i = 1; i <= 5; i++) {
-            const star = document.createElement("div");
-            star.classList.add("star");
-            sectionStars.appendChild(star);
-            if (i <= game.star) {
-                star.classList.add("fill-star")
-            }
+    const liGame = document.createElement("li");
+    const imgGame = document.createElement("img");
+    const sectionInfo = document.createElement("section");
+    const titleGame = document.createElement("h2");
+    const priceGame = document.createElement("h3");
+    let sectionStars = document.createElement("section");
+    sectionStars.classList.add("section-star")
+    liGame.classList.add("game");
+    imgGame.src = `${game.cover}`;
+    imgGame.alt = `Videpjuego ${game.name}`;
+    titleGame.textContent = game.name;
+    priceGame.textContent = `${game.price}€`;
+    liGame.appendChild(imgGame);
+    liGame.appendChild(sectionInfo);
+    sectionInfo.appendChild(titleGame);
+    sectionInfo.appendChild(priceGame);
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        sectionStars.appendChild(star);
+        if (i <= game.star) {
+            star.classList.add("fill-star")
         }
-        liGame.appendChild(sectionStars);
-        imgGame.addEventListener("click", () => renderInfoGame(game));
-        return liGame;
-
     }
-    // Render ul
+    liGame.appendChild(sectionStars);
+    imgGame.addEventListener("click", () => renderInfoGame(game));
+    return liGame;
 
+}
+
+// Función encargada de crear el main y un ul donde se introducira todos los juegos.
 const renderUL = () => {
-        const divApp = document.querySelector("#app");
-        const mainApp = document.createElement("main");
-        const ul = document.createElement("ul");
-        ul.id = "list";
-        ul.innerHTML = "";
-        divApp.appendChild(mainApp);
-        mainApp.appendChild(ul);
+    const divApp = document.querySelector("#app");
+    const mainApp = document.createElement("main");
+    const ul = document.createElement("ul");
+    ul.id = "list";
+    ul.innerHTML = "";
+    divApp.appendChild(mainApp);
+    mainApp.appendChild(ul);
 
-    }
-    // Render list games
+}
+
+// Función encargada de ordenar todos los juegos a través de su precio de menor a mayor, una vez ordenados recorre el array que le llega e introduce en el ul cada juego del array.
 const renderListGame = (list) => {
-
     const main = document.querySelector("main");
     const ul = document.querySelector("#list");
     ul.innerHTML = "";
@@ -153,7 +153,7 @@ const renderListGame = (list) => {
 }
 
 
-// GAME
+//Función para renderizar el juego la cual le llega un juego por parámetro y crea una sección para introducir cada videojuego con una imagen, un titulo, un precio y una descripción del videojuego.
 const renderGame = (game) => {
     const divApp = document.querySelector("#app");
     const divGame = document.createElement("div");
@@ -182,6 +182,7 @@ const renderGame = (game) => {
 
 }
 
+// Función para renderizar la información del videojuego, esta lo que hace es limpiar el div app y mostrar la información del juego y llamar también al boton back para poder salir de la sección.
 const renderInfoGame = (game) => {
     const divApp = document.querySelector("#app");
     divApp.innerHTML = "";

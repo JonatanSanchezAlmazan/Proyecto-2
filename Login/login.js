@@ -1,5 +1,6 @@
-import { btnBack, btnBackLogin } from "../Buttons/buttons";
+import { btnBackLogin } from "../Buttons/buttons";
 
+// Función encargada de crear un formulario para el login de la página.
 const createLogin = () => {
     const divApp = document.querySelector("#app");
     const formLogin = document.createElement("form");
@@ -33,6 +34,7 @@ const createLogin = () => {
     divApp.appendChild(formLogin);
 }
 
+// Función encargada de renderizar el formulario, esta limpia el div app y llama a la función createLogin y a btnBackLogin para poder salir de la página del formulario.
 const renderForm = () => {
     const divApp = document.querySelector("#app");
     divApp.innerHTML = "";
